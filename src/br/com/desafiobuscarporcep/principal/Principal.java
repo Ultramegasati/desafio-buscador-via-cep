@@ -35,14 +35,14 @@ public class Principal {
 
                 Endereco novoEndereco = consultaCep.buscaCep(cep);
 
-                if(novoEndereco.cep() == null)
+
+                if (novoEndereco.cep() == null){
                     System.out.println("Cep não cadastrado!!!");
-
-                System.out.println(novoEndereco);
-
-
-                GeradorDeArquivo gerador = new GeradorDeArquivo();
-                gerador.salvaJson(novoEndereco);
+                } else {
+                    System.out.println(novoEndereco);
+                    GeradorDeArquivo gerador = new GeradorDeArquivo();
+                    gerador.salvaJson(novoEndereco);
+                }
 
 
             } catch (RuntimeException | IOException e) {
